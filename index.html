@@ -7,28 +7,28 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Playball|Poppins|Roboto|Seaweed+Script" rel="stylesheet">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-
+    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
 </head>
 
 
 <body>
-    <audio id="audiotagDice" src="sounds/Shake And Roll Dice-SoundBible.com-591494296.mp3" preload="auto"></audio>
-    <audio id="audiotagFog" src="sounds/fog horn.wav" preload="auto"></audio>
-    <audio id="audiotagJail" src="sounds/police.wav" preload="auto"></audio>
-    <audio id="audiotagError" src="sounds/error.wav" preload="auto"></audio>
-    <audio id="audiotagGo" src="sounds/cha-ching.wav" preload="auto"></audio>
-    <audio id="audiotagBuy" src="sounds/buy.mp3" preload="auto"></audio>
-    <audio id="audiotagNoMoney" src="sounds/noMoney.wav" preload="auto"></audio>
-    <audio id="audiotagHonk" src="sounds/honk.wav" preload="auto"></audio>
+    <audio id="audiotagDice" src="assets/sounds/Shake And Roll Dice-SoundBible.com-591494296.mp3" preload="auto"></audio>
+    <audio id="audiotagYoshi" src="assets/sounds/yoshi01.wav" preload="auto"></audio>
+    <audio id="audiotagJail" src="assets/sounds/police.wav" preload="auto"></audio>
+    <audio id="audiotagError" src="assets/sounds/error.wav" preload="auto"></audio>
+    <audio id="audiotagGo" src="assets/sounds/cha-ching.wav" preload="auto"></audio>
+    <audio id="audiotagBuy" src="assets/sounds/buy.mp3" preload="auto"></audio>
+    <audio id="audiotagNoMoney" src="assets/sounds/noMoney.wav" preload="auto"></audio>
+    <audio id="audiotagMario" src="assets/sounds/mario04.wav" preload="auto"></audio>
     <!-- FIRST SCREEN, AKA Game Start -->
 
     <div class="containerStart startScreen text-center">
-        <img class="startImg startScreen" src="images/background/zelda.png" alt="Zelda">
+        <img class="startImg startScreen" src="https://thumbs.gfycat.com/BetterImmaculateDobermanpinscher-max-1mb.gif" alt="Zelda">
         <div class="titleStart startScreen">
             <h1 class="startScreen">NINTENDO MONOPOLY</h1>
         </div>
@@ -65,8 +65,8 @@
             <h5 class="instructionsScreen">Special Squares</h5>
             <ul>
                 <li class="hideNum"><span class="specialCards instructionsScreen">GO</span>Each time a player's token lands on or passes over GO, the player collects $200.</li>
-                <li class="hideNum"><span class="specialCards instructionsScreen">One Way Street</span>A player who lands on this space went the wrong way down a One Way Street, and subsequently must pay a fine.</li>
-                <li class="hideNum"><span class="specialCards instructionsScreen">Fog</span>A player who lands on this space got lost in the fog, and subsequently loses a turn.</li>
+                <li class="hideNum"><span class="specialCards instructionsScreen">Off Track</span>A player who lands on this space fell off the track, and subsequently must pay a fine.</li>
+                <li class="hideNum"><span class="specialCards instructionsScreen">blue shell</span>A player who lands on this space got hit by a blue shell, and subsequently loses a turn.</li>
                 <li class="hideNum"><span class="specialCards instructionsScreen">Jail</span>A player who lands on this space got busted and is stuck in jail. The player must pay a fine to get out.</li>
                 <li class="hideNum"><span class="specialCards instructionsScreen">Chance</span>A plater who lands on this space receives a card with a random consequence. The consequence can be positive or negative depending on the player's luck!</li>
             </ul>
@@ -85,10 +85,10 @@
                 <input type="text" id="playerOneName">
                 <p>This is your Token:</p>
                 
-                    <img src="images/tokens/pika.png" class="playerTokenOne">
+                    <img src="assets/images/tokens/pika.png" class="playerTokenOne">
                 
                 <p>Click the die to roll. Highest roll plays first!</p>
-                <p><img height="65" id="playerOneDie" src="images/dice/BeforeRolled.png" alt="Roll the die!"></p>
+                <p><img height="65" id="playerOneDie" src="assets/images/dice/BeforeRolled.png" alt="Roll the die!"></p>
         </span>
                 <span class="innerContainersPlayers playersScreen playerBoxTwo">
             <h2 class="playersScreen playerTitleText">Player Two</h2>
@@ -96,10 +96,10 @@
                <input type="text" id="playerTwoName">
                  <p>This is your Token:</p>
                 
-                    <img src="images/tokens/zelda.jpeg" class="playerTokenTwo">
+                    <img src="assets/images/tokens/zelda.png" class="playerTokenTwo">
                 
                  <p>Click the die to roll. Highest roll plays first!</p>
-                <p><img height="65" id="playerTwoDie" src="images/dice/BeforeRolled.png" alt="Roll the die!"></p>
+                <p><img height="65" id="playerTwoDie" src="assets/images/dice/BeforeRolled.png" alt="Roll the die!"></p>
         </span>
             </form>
             <button class="btn btn-danger playerScreen playerButton" id="submitPlayerInfo">Submit</button>
@@ -121,7 +121,7 @@
                 </div>
                 <h2 class="playerH2" id="playerOne-name"></h2>
                 <div id="playerOneGameCashDiv" class="playerOneGameInfo">
-                    <img id="money-symbol" src="images/money/symbol.png" alt="Money Symbol">
+                    <img id="money-symbol" src="assets/images/money/symbol.png" alt="Money Symbol">
                     <span id="playerOneGameCash">
                 <!-- amount of money left populates here -->
             </span>
@@ -133,7 +133,7 @@
                 <div class="die-background">
                     <h2 class="playerH2" id="playerOneGameDie">Your Turn!</h2>
                     <p class="text-center">
-                        <img height="65" id="playerOneGameDieImage" class="playerOneGameInfo" src="images/dice/BeforeRolled.png" alt="Roll the die!"></p>
+                        <img height="65" id="playerOneGameDieImage" class="playerOneGameInfo" src="assets/images/dice/BeforeRolled.png" alt="Roll the die!"></p>
                 </div>
                 <div id="playerOne-interactions" class="container">
                     <div id="playerOneInteractionsImageDiv"><img id="playerOneInteractionsImage" src="" alt=""></div>
@@ -153,135 +153,135 @@
         <div id="board" class="body">
             <div id="row1" class="row">
                 <div id="corner1" class="corners">
-                    <img id="fog" src="images/corners/free-parking.jpg" alt="Free Parking">
-                    <img id="playerOne-fog" class="playerOne bottom-20 display-none" src="images/tokens/pika.png" alt="Player One"></img>
-                    <img id="playerTwo-fog" class="playerTwo bottom-20 display-none" src="images/tokens/zelda.jpeg" alt="Player Two"></img>
+                    <img id="BS" src="assets/images/corners/free-parking.jpg" alt="Free Parking">
+                    <img id="playerOne-BS" class="playerOne bottom-20 display-none" src="assets/images/tokens/pika.png" alt="Player One"></img>
+                    <img id="playerTwo-BS" class="playerTwo bottom-20 display-none" src="assets/images/tokens/zelda.png" alt="Player Two"></img>
                 </div>
                 <div id="property1" class="properties long-properties">
-                    <img id="theCastro" class="long-img" src="images/properties/castro.jpg" alt="The Castro">
-                    <img id="playerOne-theCastro" class="playerOne bottom-60 display-none" src="images/tokens/pika.png" alt="Player One"></img>
-                    <img id="playerTwo-theCastro" class="playerTwo bottom-60 display-none" src="images/tokens/zelda.jpeg" alt="Player Two"></img>
+                    <img id="mushroom" class="long-img" src="assets/images/properties/mushroom.jpg" alt="Mushroom Kingdom">
+                    <img id="playerOne-mushroom" class="playerOne bottom-60 display-none" src="assets/images/tokens/pika.png" alt="Player One"></img>
+                    <img id="playerTwo-mushroom" class="playerTwo bottom-60 display-none" src="assets/images/tokens/zelda.png" alt="Player Two"></img>
                 </div>
                 <div id="property2" class="properties long-properties">
-                    <img id="civicCenter" class="long-img" src="images/properties/civic-center.jpg" alt="Civic Center">
-                    <img id="playerOne-civicCenter" class="playerOne bottom-60 display-none" src="images/tokens/pika.png" alt="Player One"></img>
-                    <img id="playerTwo-civicCenter" class="playerTwo bottom-60 display-none" src="images/tokens/zelda.jpeg" alt="Player Two"></img>
+                    <img id="starRoad" class="long-img" src="assets/images/properties/star.jpg" alt="start Road">
+                    <img id="playerOne-starRoad" class="playerOne bottom-60 display-none" src="assets/images/tokens/pika.png" alt="Player One"></img>
+                    <img id="playerTwo-starRoad" class="playerTwo bottom-60 display-none" src="assets/images/tokens/zelda.png" alt="Player Two"></img>
                 </div>
                 <div id="property3" class="properties long-properties">
-                    <img id="chance1" class="long-img" src="images/chance-chest/chance-1.jpg" alt="Community Chest">
-                    <img id="playerOne-chance1" class="playerOne bottom-60 display-none" src="images/tokens/pika.png" alt="Player One"></img>
-                    <img id="playerTwo-chance1" class="playerTwo bottom-60 display-none" src="images/tokens/zelda.jpeg" alt="Player Two"></img>
+                    <img id="chance1" class="long-img" src="assets/images/chance-chest/chance-1.jpg" alt="Community Chest">
+                    <img id="playerOne-chance1" class="playerOne bottom-60 display-none" src="assets/images/tokens/pika.png" alt="Player One"></img>
+                    <img id="playerTwo-chance1" class="playerTwo bottom-60 display-none" src="assets/images/tokens/zelda.png" alt="Player Two"></img>
                 </div>
                 <div id="property4" class="properties long-properties">
-                    <img id="alamoSquare" class="long-img" src="images/properties/alamo-square.jpg" alt="Alamo Square">
-                    <img id="playerOne-alamoSquare" class="playerOne bottom-60 display-none" src="images/tokens/pika.png" alt="Player One"></img>
-                    <img id="playerTwo-alamoSquare" class="playerTwo bottom-60 display-none" src="images/tokens/zelda.jpeg" alt="Player Two"></img>
+                    <img id="tourian" class="long-img" src="assets/images/properties/tourian.jpg" alt="Tourian">
+                    <img id="playerOne-tourian" class="playerOne bottom-60 display-none" src="assets/images/tokens/pika.png" alt="Player One"></img>
+                    <img id="playerTwo-tourian" class="playerTwo bottom-60 display-none" src="assets/images/tokens/zelda.png" alt="Player Two"></img>
                 </div>
                 <div id="property5" class="properties long-properties">
-                    <img id="dogPatch" class="long-img" src="images/properties/dogpatch.jpg" alt="Dogpatch">
-                    <img id="playerOne-dogPatch" class="playerOne bottom-60 display-none" src="images/tokens/pika.png" alt="Player One"></img>
-                    <img id="playerTwo-dogPatch" class="playerTwo bottom-60 display-none" src="images/tokens/zelda.jpeg" alt="Player Two"></img>
+                    <img id="brinstar" class="long-img" src="assets/images/properties/brinstar.jpg" alt="Brinstar">
+                    <img id="playerOne-brinstar" class="playerOne bottom-60 display-none" src="assets/images/tokens/pika.png" alt="Player One"></img>
+                    <img id="playerTwo-brinstar" class="playerTwo bottom-60 display-none" src="assets/images/tokens/zelda.png" alt="Player Two"></img>
                 </div>
                 <div id="corner2" class="corners">
-                    <img id="jail" src="images/corners/go-to-jail.jpg" alt="Go To Jail">
-                    <img id="playerOne-jail" class="playerOne bottom-20 display-none" src="images/tokens/pika.png" alt="Player One"></img>
-                    <img id="playerTwo-jail" class="playerTwo bottom-20 display-none" src="images/tokens/zelda.jpeg" alt="Player Two"></img>
+                    <img id="jail" src="assets/images/corners/go-to-jail.jpg" alt="Go To Jail">
+                    <img id="playerOne-jail" class="playerOne bottom-20 display-none" src="assets/images/tokens/pika.png" alt="Player One"></img>
+                    <img id="playerTwo-jail" class="playerTwo bottom-20 display-none" src="assets/images/tokens/zelda.png" alt="Player Two"></img>
                 </div>
             </div>
             <div id="row2" class="row">
                 <div id="property6" class="properties wide-properties">
-                    <img id="haightAshbury" class="wide-img" src="images/properties/haight-ashbury.jpg" alt="Haight Ashbury">
-                    <img id="playerOne-haightAshbury" class="playerOne bottom-20 display-none" src="images/tokens/pika.png" alt="Player One"></img>
-                    <img id="playerTwo-haightAshbury" class="playerTwo bottom-20 display-none" src="images/tokens/zelda.jpeg" alt="Player Two"></img>
+                    <img id="temple" class="wide-img" src="assets/images/properties/temple.jpg" alt="Temple">
+                    <img id="playerOne-temple" class="playerOne bottom-20 display-none" src="assets/images/tokens/pika.png" alt="Player One"></img>
+                    <img id="playerTwo-temple" class="playerTwo bottom-20 display-none" src="assets/images/tokens/zelda.png" alt="Player Two"></img>
                 </div>
                 <div id="property7" class="properties wide-properties end-properties">
-                    <img id="northBeach" class="wide-img" src="images/properties/north-beach.jpg" alt="North Beach">
-                    <img id="playerOne-northBeach" class="playerOne bottom-20 display-none" src="images/tokens/pika.png" alt="Player One"></img>
-                    <img id="playerTwo-northBeach" class="playerTwo bottom-20 display-none" src="images/tokens/zelda.jpeg" alt="Player Two"></img>
+                    <img id="mumbo" class="wide-img" src="assets/images/properties/mumbo.jpg" alt="Mumbo's Mountain">
+                    <img id="playerOne-mumbo" class="playerOne bottom-20 display-none" src="assets/images/tokens/pika.png" alt="Player One"></img>
+                    <img id="playerTwo-mumbo" class="playerTwo bottom-20 display-none" src="assets/images/tokens/zelda.png" alt="Player Two"></img>
                 </div>
             </div>
             <div id="row3" class="row">
                 <div id="property8" class="properties wide-properties">
-                    <img id="chinaTown" class="wide-img" src="images/properties/china-town.jpg" alt="China Town">
-                    <img id="playerOne-chinaTown" class="playerOne bottom-20 display-none" src="images/tokens/pika.png" alt="Player One"></img>
-                    <img id="playerTwo-chinaTown" class="playerTwo bottom-20 display-none" src="images/tokens/zelda.jpeg" alt="Player Two"></img>
+                    <img id="corneria" class="wide-img" src="assets/images/properties/corneria.jpg" alt="Corneria">
+                    <img id="playerOne-corneria" class="playerOne bottom-20 display-none" src="assets/images/tokens/pika.png" alt="Player One"></img>
+                    <img id="playerTwo-corneria" class="playerTwo bottom-20 display-none" src="assets/images/tokens/zelda.png" alt="Player Two"></img>
                 </div>
                 <div id="property9" class="properties wide-properties end-properties">
-                    <img id="soma" class="wide-img" src="images/properties/soma.jpg" alt="Soma">
-                    <img id="playerOne-soma" class="playerOne bottom-20 display-none" src="images/tokens/pika.png" alt="Player One"></img>
-                    <img id="playerTwo-soma" class="playerTwo bottom-20 display-none" src="images/tokens/zelda.jpeg" alt="Player Two"></img>
+                    <img id="clanker" class="wide-img" src="assets/images/properties/clanker.jpg" alt="Clanker's Cavern">
+                    <img id="playerOne-clanker" class="playerOne bottom-20 display-none" src="assets/images/tokens/pika.png" alt="Player One"></img>
+                    <img id="playerTwo-clanker" class="playerTwo bottom-20 display-none" src="assets/images/tokens/zelda.png" alt="Player Two"></img>
                 </div>
             </div>
             <div id="row4" class="row">
                 <div id="property10" class="properties wide-properties">
-                    <img id="chance4" class="wide-img" src="images/chance-chest/chance-4.jpg" alt="Chance">
-                    <img id="playerOne-chance4" class="playerOne bottom-20 display-none" src="images/tokens/pika.png" alt="Player One"></img>
-                    <img id="playerTwo-chance4" class="playerTwo bottom-20 display-none" src="images/tokens/zelda.jpeg" alt="Player Two"></img>
+                    <img id="chance4" class="wide-img" src="assets/images/chance-chest/chance-4.jpg" alt="Chance">
+                    <img id="playerOne-chance4" class="playerOne bottom-20 display-none" src="assets/images/tokens/pika.png" alt="Player One"></img>
+                    <img id="playerTwo-chance4" class="playerTwo bottom-20 display-none" src="assets/images/tokens/zelda.png" alt="Player Two"></img>
                 </div>
                 <div id="property11" class="properties wide-properties end-properties">
-                    <img id="chance2" class="wide-img" src="images/chance-chest/chance-2.jpg" alt="Chance">
-                    <img id="playerOne-chance2" class="playerOne bottom-20 display-none" src="images/tokens/pika.png" alt="Player One"></img>
-                    <img id="playerTwo-chance2" class="playerTwo bottom-20 display-none" src="images/tokens/zelda.jpeg" alt="Player Two"></img>
+                    <img id="chance2" class="wide-img" src="assets/images/chance-chest/chance-2.jpg" alt="Chance">
+                    <img id="playerOne-chance2" class="playerOne bottom-20 display-none" src="assets/images/tokens/pika.png" alt="Player One"></img>
+                    <img id="playerTwo-chance2" class="playerTwo bottom-20 display-none" src="assets/images/tokens/zelda.png" alt="Player Two"></img>
                 </div>
             </div>
             <div id="row5" class="row">
                 <div id="property12" class="properties wide-properties">
-                    <img id="missionDistrict" class="wide-img" src="images/properties/mission-district.jpg" alt="Mission District">
-                    <img id="playerOne-missionDistrict" class="playerOne bottom-20 display-none" src="images/tokens/pika.png" alt="Player One"></img>
-                    <img id="playerTwo-missionDistrict" class="playerTwo bottom-20 display-none" src="images/tokens/zelda.jpeg" alt="Player Two"></img>
+                    <img id="gorillaGlacier" class="wide-img" src="assets/images/properties/gorilla-glacier.jpg" alt="Gorilla Glacier">
+                    <img id="playerOne-gorillaGlacier" class="playerOne bottom-20 display-none" src="assets/images/tokens/pika.png" alt="Player One"></img>
+                    <img id="playerTwo-gorillaGlacier" class="playerTwo bottom-20 display-none" src="assets/images/tokens/zelda.png" alt="Player Two"></img>
                 </div>
                 <div id="property13" class="properties wide-properties end-properties">
-                    <img id="financialDistrict" class="wide-img" src="images/properties/financial-district.jpg" alt="Financial District">
-                    <img id="playerOne-financialDistrict" class="playerOne bottom-20 display-none" src="images/tokens/pika.png" alt="Player One"></img>
-                    <img id="playerTwo-financialDistrict" class="playerTwo bottom-20 display-none" src="images/tokens/zelda.jpeg" alt="Player Two"></img>
+                    <img id="koholint" class="wide-img" src="assets/images/properties/koholint.jpg" alt="Koholint Island">
+                    <img id="playerOne-koholint" class="playerOne bottom-20 display-none" src="assets/images/tokens/pika.png" alt="Player One"></img>
+                    <img id="playerTwo-koholint" class="playerTwo bottom-20 display-none" src="assets/images/tokens/zelda.png" alt="Player Two"></img>
                 </div>
             </div>
             <div id="row6" class="row">
                 <div id="property14" class="properties wide-properties">
-                    <img id="noeValley" class="wide-img" src="images/properties/noe-valley.jpg" alt="Noe Valley">
-                    <img id="playerOne-noeValley" class="playerOne bottom-20 display-none" src="images/tokens/pika.png" alt="Player One"></img>
-                    <img id="playerTwo-noeValley" class="playerTwo bottom-20 display-none" src="images/tokens/zelda.jpeg" alt="Player Two"></img>
+                    <img id="kongoJungle" class="wide-img" src="assets/images/properties/kongo-jungle.jpg" alt="kongo jungle">
+                    <img id="playerOne-kongoJungle" class="playerOne bottom-20 display-none" src="assets/images/tokens/pika.png" alt="Player One"></img>
+                    <img id="playerTwo-kongoJungle" class="playerTwo bottom-20 display-none" src="assets/images/tokens/zelda.png" alt="Player Two"></img>
                 </div>
                 <div id="property15" class="properties wide-properties end-properties">
-                    <img id="russianHill" class="wide-img" src="images/properties/russian-hill.jpg" alt="Russian Hill">
-                    <img id="playerOne-russianHill" class="playerOne bottom-20 display-none" src="images/tokens/pika.png" alt="Player One"></img>
-                    <img id="playerTwo-russianHill" class="playerTwo bottom-20 display-none" src="images/tokens/zelda.jpeg" alt="Player Two"></img>
+                    <img id="hyrule" class="wide-img" src="assets/images/properties/hyrule.jpg" alt="Koholint Island">
+                    <img id="playerOne-hyrule" class="playerOne bottom-20 display-none" src="assets/images/tokens/pika.png" alt="Player One"></img>
+                    <img id="playerTwo-hyrule" class="playerTwo bottom-20 display-none" src="assets/images/tokens/zelda.png" alt="Player Two"></img>
                 </div>
             </div>
             <div id="row7" class="row">
                 <div id="corner3" class="corners">
-                    <img id="oneWayStreet" src="images/corners/in-jail.jpg" alt="In Jail">
-                    <img id="playerOne-oneWayStreet" class="playerOne bottom-20 display-none" src="images/tokens/pika.png" alt="Player One"></img>
-                    <img id="playerTwo-oneWayStreet" class="playerTwo bottom-20 display-none" src="images/tokens/zelda.jpeg" alt="Player Two"></img>
+                    <img id="offTrack" src="assets/images/corners/in-jail.jpg" alt="In Jail">
+                    <img id="playerOne-offTrack" class="playerOne bottom-20 display-none" src="assets/images/tokens/pika.png" alt="Player One"></img>
+                    <img id="playerTwo-offTrack" class="playerTwo bottom-20 display-none" src="assets/images/tokens/zelda.png" alt="Player Two"></img>
                 </div>
                 <div id="property16" class="properties long-properties">
-                    <img id="nobHill" class="long-img" src="images/properties/nob-hill.jpg" alt="Nob Hill">
-                    <img id="playerOne-nobHill" class="playerOne bottom-20 display-none" src="images/tokens/pika.png" alt="Player One"></img>
-                    <img id="playerTwo-nobHill" class="playerTwo bottom-20 display-none" class="playerTwo bottom-20 display-none" src="images/tokens/zelda.jpeg" alt="Player Two"></img>
+                    <img id="sherbertLand" class="long-img" src="assets/images/properties/sherbert-land.jpg" alt="Sherbert Land">
+                    <img id="playerOne-sherbertLand" class="playerOne bottom-20 display-none" src="assets/images/tokens/pika.png" alt="Player One"></img>
+                    <img id="playerTwo-sherbertLand" class="playerTwo bottom-20 display-none" src="assets/images/tokens/zelda.png" alt="Player Two"></img>
                 </div>
                 <div id="property17" class="properties long-properties">
-                    <img id="sunset" class="long-img" src="images/properties/sunset.jpg" alt="Sunset">
-                    <img id="playerOne-sunset" class="playerOne bottom-20 display-none" src="images/tokens/pika.png" alt="Player One"></img>
-                    <img id="playerTwo-sunset" class="playerTwo bottom-20 display-none" src="images/tokens/zelda.jpeg" alt="Player Two"></img>
+                    <img id="rainbowRoad" class="long-img" src="assets/images/properties/rainbow-road.jpg" alt="Rainbow Road">
+                    <img id="playerOne-rainbowRoad" class="playerOne bottom-20 display-none" src="assets/images/tokens/pika.png" alt="Player One"></img>
+                    <img id="playerTwo-rainbowRoad" class="playerTwo bottom-20 display-none" src="assets/images/tokens/zelda.png" alt="Player Two"></img>
                 </div>
                 <div id="property18" class="properties long-properties">
-                    <img id="chance3" class="long-img" src="images/chance-chest/chance-3.jpg" alt="Community Chest">
-                    <img id="playerOne-chance3" class="playerOne bottom-20 display-none" src="images/tokens/pika.png" alt="Player One"></img>
-                    <img id="playerTwo-chance3" class="playerTwo bottom-20 display-none" src="images/tokens/zelda.jpeg" alt="Player Two"></img>
+                    <img id="chance3" class="long-img" src="assets/images/chance-chest/chance-3.jpg" alt="Community Chest">
+                    <img id="playerOne-chance3" class="playerOne bottom-20 display-none" src="assets/images/tokens/pika.png" alt="Player One"></img>
+                    <img id="playerTwo-chance3" class="playerTwo bottom-20 display-none" src="assets/images/tokens/zelda.png" alt="Player Two"></img>
                 </div>
                 <div id="property19" class="properties long-properties">
-                    <img id="huntersPoint" class="long-img" src="images/properties/hunters-point.jpg" alt="Hunters Point">
-                    <img id="playerOne-huntersPoint" class="playerOne bottom-20 display-none" src="images/tokens/pika.png" alt="Player One"></img>
-                    <img id="playerTwo-huntersPoint" class="playerTwo bottom-20 display-none" src="images/tokens/zelda.jpeg" alt="Player Two"></img>
+                    <img id="viridianCity" class="long-img" src="assets/images/properties/viridian-City.jpg" alt="viridian City">
+                    <img id="playerOne-viridianCity" class="playerOne bottom-20 display-none" src="assets/images/tokens/pika.png" alt="Player One"></img>
+                    <img id="playerTwo-viridianCity" class="playerTwo bottom-20 display-none" src="assets/images/tokens/zelda.png" alt="Player Two"></img>
                 </div>
                 <div id="property20" class="properties long-properties">
-                    <img id="goldenGatePark" class="long-img" src="images/properties/golden-gate.jpg" alt="Golden Gate Park">
-                    <img id="playerOne-goldenGatePark" class="playerOne bottom-20 display-none" src="images/tokens/pika.png" alt="Player One"></img>
-                    <img id="playerTwo-goldenGatePark" class="playerTwo bottom-20 display-none" src="images/tokens/zelda.jpeg" alt="Player Two"></img>
+                    <img id="palletTown" class="long-img" src="assets/images/properties/pallet-town.jpg" alt="Pallet Town">
+                    <img id="playerOne-palletTown" class="playerOne bottom-20 display-none" src="assets/images/tokens/pika.png" alt="Player One"></img>
+                    <img id="playerTwo-palletTown" class="playerTwo bottom-20 display-none" src="assets/images/tokens/zelda.png" alt="Player Two"></img>
                 </div>
-                <div id="corner4" class="corners"><img id="go" src="images/corners/go.jpg" alt="Go">
-                    <img id="playerOne-go" class="playerOne bottom-20 display-none" src="images/tokens/pika.png" alt="Player One"></img>
-                    <img id="playerTwo-go" class="playerTwo bottom-20 display-none" src="images/tokens/zelda.jpeg" alt="Player Two"></img>
+                <div id="corner4" class="corners"><img id="go" src="assets/images/corners/go.jpg" alt="Go">
+                    <img id="playerOne-go" class="playerOne bottom-20 display-none" src="assets/images/tokens/pika.png" alt="Player One"></img>
+                    <img id="playerTwo-go" class="playerTwo bottom-20 display-none" src="assets/images/tokens/zelda.png" alt="Player Two"></img>
                 </div>
             </div>
         </div>
@@ -296,7 +296,7 @@
                 </div>
                 <h2 class="playerH2" id="playerTwo-name"></h2>
                 <div id="playerTwoGameCashDiv" class="playerTwoGameInfo">
-                    <img id="money-symbol" src="images/money/symbol.png" alt="Money Symbol">
+                    <img id="money-symbol" src="assets/images/money/symbol.png" alt="Money Symbol">
                     <span id="playerTwoGameCash">
                     <!-- amount of money left populates here -->
                 </span>
@@ -308,7 +308,7 @@
                 <div class="die-background">
                     <h2 class="playerH2" id="playerTwoGameDie">Your Turn!</h2>
                     <p class="text-center">
-                        <img height="65" id="playerTwoGameDieImage" class="playerTwoGameInfo" src="images/dice/BeforeRolled.png" alt="Roll the die!"></p>
+                        <img height="65" id="playerTwoGameDieImage" class="playerTwoGameInfo" src="assets/images/dice/BeforeRolled.png" alt="Roll the die!"></p>
                 </div>
                 <div id="playerTwo-interactions" class="container">
                     <!-- Buy property elements -->
@@ -332,7 +332,7 @@
     <div class="containerEndGame endGameScreen text-center">
         <h2 class="endGameScreen">Game Over</h2>
         <h5 class="endGameScreen">Congratulations! <span class="winner"></span> is the winner.</h5>
-        <img id="winnerImg" src="" data-playerOne="images/tokens/pika.png" data-playerTwo="images/tokens/zelda.jpeg">
+        <img id="winnerImg" src="" data-playerOne="assets/images/tokens/pika.png" data-playerTwo="assets/images/tokens/zelda.png">
         <h5 class="endGameScreen"><span class="loser"></span> is out of cash...</h5>
         <form>
             <button class="btn btn-danger endGameScreen" id="resetGame">Play Again?</button>
@@ -375,7 +375,7 @@
     <!-- JQUERY for moving between screens on page load -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="javascript/game.js"></script>
+    <script src="assets/javascript/game.js"></script>
 
 </body>
 

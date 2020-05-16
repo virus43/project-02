@@ -4,12 +4,6 @@ allPlayers = {
     playerOne: {},
     playerTwo: {}
 };
-
-statistics = {
- cash: {playerOne:[],
-        playerTwo: []
-        }
-}
 // var playerOne = {};
 // var playerTwo = {};
 var playerOneDie, playerTwoDie;
@@ -29,13 +23,13 @@ var currentProperty;
 var randomChanceCard;
 var otherPlayer;
 var diceAudio = document.getElementById("audiotagDice");
-var fogAudio = document.getElementById("audiotagFog");
+var yoshiAudio = document.getElementById("audiotagYoshi");
 var jailAudio = document.getElementById("audiotagJail");
 var errorAudio = document.getElementById("audiotagError");
 var getMoneyAudio = document.getElementById("audiotagGo");
 var buyAudio = document.getElementById("audiotagBuy");
 var noMoneyAudio = document.getElementById("audiotagNoMoney");
-var honkAudio = document.getElementById("audiotagHonk");
+var marioAudio = document.getElementById("audiotagMario");
 var dieElementID;
 var dieImageElementID;
 var interactionImageID;
@@ -87,13 +81,13 @@ var database = firebase.database();
 //     currentPosition : ""
 // };
 
-var boardPosition = ['go', 'goldenPallet ', 'huntersPoint', 'chance3', 'sunset', 'nobHill', 'oneWayStreet', 'noeValley',
-    'missionDistrict', 'chance4', 'chinaTown', 'haightAshbury', 'fog', 'theCastro', 'civicCenter', 'chance1', 'alamoSquare',
-    'dogPatch', 'jail', 'northBeach', 'soma', 'chance2', 'financialDistrict', 'russianHill', 'go'
+var boardPosition = ['go', 'palletTown', 'viridianCity', 'chance3', 'rainbowRoad', 'sherbertLand', 'offTrack', 'kongoJungle',
+    'gorillaGlacier', 'chance4', 'corneria', 'temple', 'BS', 'mushroom', 'starRoad', 'chance1', 'tourian',
+    'brinstar', 'jail', 'mumbo', 'clanker', 'chance2', 'koholint', 'hyrule', 'go'
 ];
 
 
-var nonProperties = ['go', 'chance3', 'oneWayStreet', 'chance4', 'fog', 'chance1', 'jail', 'chance2']
+var nonProperties = ['go', 'chance3', 'offTrack', 'chance4', 'BS', 'chance1', 'jail', 'chance2']
 
 // objects for each property
 
@@ -105,241 +99,241 @@ var allProperties = {
         price: 200,
         rent: 0,
         owner: '',
-        url: 'images/prop-imgs/go.jpg'
+        url: 'assets/images/prop-imgs/go.jpg'
     },
-    goldenGatePark: {
-        name: "Golden Gate Park",
+    palletTown: {
+        name: "pallet town",
         price: 60,
         rent: 30,
         owner: '',
-        pair: 'huntersPoint',
-        url: 'images/prop-imgs/goldenGatePark.jpg'
+        pair: 'viridianCity',
+        url: 'assets/images/prop-imgs/ptown.png'
     },
-    huntersPoint: {
-        name: "Hunter's Point",
+    viridianCity: {
+        name: "viridian City",
         price: 60,
         rent: 30,
         owner: '',
-        pair: 'goldenGatePark',
-        url: 'images/prop-imgs/huntersPoint.jpg'
+        pair: 'palletTown',
+        url: 'assets/images/prop-imgs/viridianCity.png'
     },
-    sunset: {
-        name: "Sunset",
+    rainbowRoad: {
+        name: "rainbow Road",
         price: 100,
         rent: 50,
         owner: '',
-        pair: 'nobHill',
-        url: 'images/prop-imgs/sunset.jpg'
+        pair: 'sherbertLand',
+        url: 'assets/images/prop-imgs/rainbow.png'
     },
-    nobHill: {
-        name: "Nob Hill",
+    sherbertLand: {
+        name: "Sherbert Land",
         price: 120,
         rent: 60,
         owner: '',
-        pair: 'sunset',
-        url: 'images/prop-imgs/nobHill.jpg'
+        pair: 'rainbowRoad',
+        url: 'assets/images/prop-imgs/sherbert.png'
     },
-    oneWayStreet: {
-        name: "Wrong way!",
-        action: "One Way Street",
+    offTrack: {
+        name: "Off Track!",
+        action: "Off Track",
         value: "Pay fine of $100",
         price: -100,
         rent: 0,
         owner: '',
-        url: 'images/prop-imgs/oneWayStreet.jpg'
+        url: 'assets/images/prop-imgs/in-jail.jpg'
     },
-    noeValley: {
-        name: "Noe Valley",
+    kongoJungle: {
+        name: "Kongo Jungle",
         price: 140,
         rent: 70,
         owner: '',
-        pair: 'missionDistrict',
-        url: 'images/prop-imgs/noeValley.jpg'
+        pair: 'gorillaGlacier',
+        url: 'assets/images/prop-imgs/kongo.jpeg'
     },
-    missionDistrict: {
-        name: "Mission District",
+    gorillaGlacier: {
+        name: "Gorilla Glacier",
         price: 160,
         rent: 80,
         owner: '',
-        pair: 'noeValley',
-        url: 'images/prop-imgs/missionDistrict.jpg'
+        pair: 'kongoJungle',
+        url: 'assets/images/prop-imgs/glacier.jpeg'
     },
-    chinaTown: {
-        name: "China Town",
+    corneria: {
+        name: "Corneria",
         price: 180,
         rent: 90,
         owner: '',
-        pair: 'haightAshbury',
-        url: 'images/prop-imgs/chinaTown.jpg'
+        pair: 'temple',
+        url: 'assets/images/prop-imgs/corneria.jpeg'
     },
-    haightAshbury: {
-        name: "Haight Ashbury",
+    temple: {
+        name: "Temple",
         price: 200,
         rent: 100,
         owner: '',
-        pair: 'chinaTown',
-        url: 'images/prop-imgs/haightAshbury.jpg'
+        pair: 'corneria',
+        url: 'assets/images/prop-imgs/temple.jpg'
     },
     chance1: {
         name: "Chance! Take a chance card and follow the instructions.",
         price: 0,
         rent: 0,
         owner: '',
-        url: 'images/prop-imgs/chance.jpg'
-    },
+        url: 'assets/images/prop-imgs/chance.jpg'
+    },  
     chance2: {
         name: "Chance! Take a chance card and follow the instructions.",
         price: 0,
         rent: 0,
         owner: '',
-        url: 'images/prop-imgs/chance.jpg'
+        url: 'assets/images/prop-imgs/chance.jpg'
     },
     chance3: {
         name: "Chance! Take a chance card and follow the instructions.",
         price: 0,
         rent: 0,
         owner: '',
-        url: 'images/prop-imgs/chance.jpg'
+        url: 'assets/images/prop-imgs/chance.jpg'
     },
     chance4: {
         name: "Chance! Take a chance card and follow the instructions.",
         price: 0,
         rent: 0,
         owner: '',
-        url: 'images/prop-imgs/chance.jpg'
+        url: 'assets/images/prop-imgs/chance.jpg'
     },
-    theCastro: {
-        name: "The Castro",
+    mushroom: {
+        name: "Mushroom Kingdom",
         price: 220,
         rent: 110,
         owner: '',
-        pair: 'civicCenter',
-        url: 'images/prop-imgs/theCastro.jpg'
+        pair: 'starRoad',
+        url: 'assets/images/prop-imgs/mushroom.jpeg'
     },
-    civicCenter: {
-        name: "Civic Center",
+    starRoad: {
+        name: "Star Road",
         price: 240,
         rent: 120,
         owner: '',
-        pair: 'theCastro',
-        url: 'images/prop-imgs/civicCenter.jpg'
+        pair: 'mushroom',
+        url: 'assets/images/prop-imgs/star.jpeg'
     },
-    alamoSquare: {
-        name: "Alamo Square",
+    tourian: {
+        name: "Tourian",
         price: 260,
         rent: 130,
         owner: '',
-        pair: 'dogPatch',
-        url: 'images/prop-imgs/alamoSquare.jpg'
+        pair: 'brinstar',
+        url: 'assets/images/prop-imgs/tourian.jpeg'
     },
-    dogPatch: {
-        name: "Dog Patch",
+    brinstar: {
+        name: "Brinstar",
         price: 280,
         rent: 140,
         owner: '',
-        pair: 'alamoSquare',
-        url: 'images/prop-imgs/dogPatch.jpg'
+        pair: 'tourian',
+        url: 'assets/images/prop-imgs/brinstar.jpeg'
     },
-    fog: {
-        name: "Lost in the fog",
+    BS: {
+        name: "hit by a blue shell",
         action: "Lose one turn",
         value: "",
         price: 0,
         rent: 0,
         owner: '',
-        url: 'images/prop-imgs/fog.jpg'
+        url: 'assets/images/prop-imgs/BS.jpg'
     },
     jail: {
         name: "Busted!",
-        action: "Double parked",
+        action: "out of lives",
         value: "Pay fine of $80",
         price: -80,
         rent: 0,
         owner: '',
-        url: 'images/prop-imgs/fog.jpg'
+        url: 'assets/images/prop-imgs/jenny.png'
     },
-    northBeach: {
-        name: "North Beach",
-        price: 300,
+    mumbo: {
+        name: "Mumbo's Mountain",
+        price: 320,
         rent: 150,
         owner: '',
-        pair: 'soma',
-        url: 'images/prop-imgs/northBeach.jpg'
+        pair: '',
+        url: 'assets/images/prop-imgs/mumbo.jpeg'
     },
-    soma: {
-        name: "SOMA",
-        price: 320,
+    clanker: {
+        name: "Clanker's Cavern",
+        price: 300,
         rent: 160,
         owner: '',
-        pair: 'northBeach',
-        url: 'images/prop-imgs/northBeach.jpg'
+        pair: 'mumbo',
+        url: 'assets/images/prop-imgs/clanker.jpeg'
     },
-    financialDistrict: {
-        name: "Financial District",
+    koholint: {
+        name: "Koholint Island",
         price: 350,
         rent: 180,
         owner: '',
-        pair: 'russianHill',
-        url: 'images/prop-imgs/financialDistrict.jpg'
+        pair: 'koholint',
+        url: 'assets/images/prop-imgs/koholint.jpg'
     },
-    russianHill: {
-        name: "Russian Hill",
+    hyryle: {
+        name: "Hyrule",
         price: 400,
         rent: 200,
         owner: '',
-        pair: 'financialDistrict',
-        url: 'images/prop-imgs/russianHill.jpg'
+        pair: 'koholint',
+        url: 'assets/images/prop-imgs/hyrule.jpeg'
     }
 };
 // Object  for chance cards
 var chanceCard = [{
-        name: 'Parking Expired',
-        action: 'Pay the meter.',
+        name: 'Buy a Pokeball',
+        action: 'Purchased Ball.',
         value: -20
     },
     {
-        name: 'Work perk: free catered meals!',
-        action: 'Save on lunch cost.',
+        name: 'perk: find rupees!',
+        action: 'Rupees Found!',
         value: 100
     },
     {
-        name: 'BART is delayed.',
-        action: 'Take Uber instead.',
+        name: 'your paper missed the stoop',
+        action: 'Pay a Fine',
         value: -30
     },
     {
-        name: 'Cross Golden Gate Bridge.',
-        action: 'Pay the bridge toll.',
+        name: 'Enter the Mushroom Kingdom.',
+        action: 'Pay the toll.',
         value: -50
     },
     {
-        name: 'Missed the Ferry.',
-        action: 'Stay the night in the city.',
+        name: 'Take a plane ride.',
+        action: 'Pay Funky Kong.',
         value: -250
     },
     {
-        name: 'Take second job to afford rent.',
+        name: 'beat the boss.',
         action: 'Pay day!',
         value: 300
     },
     {
-        name: 'Giants Game today!',
-        action: 'Tailgate at AT&T Park.',
+        name: 'buy a super potion',
+        action: 'heal your pokemon',
         value: -100
     },
     {
-        name: 'Ride bike on commute.',
-        action: 'Save money on gas.',
+        name: 'defeat dracula.',
+        action: 'paid by thankfull townsfolk.',
         value: 80
     },
     {
-        name: 'Sightseeing at Pier 39',
-        action: 'Buy souvenirs.',
+        name: 'unlock the golden gun',
+        action: 'Unlocked.',
         value: -150
     },
     {
-        name: 'Go Organic.',
-        action: 'Buy whole organic foods only.',
+        name: 'Zombies ate my neighbors.',
+        action: 'Buy weapons.',
         value: -200
     }
 ];
@@ -366,8 +360,8 @@ $('#resetGame').on('click', function() {
     playerTwoPositionCounter = 0;
     $('#playerOneGameOwnedPropertiesDiv').empty();
     $('#playerTwoGameOwnedPropertiesDiv').empty();
-    $('#playerOneDie').attr('src', 'images/dice/BeforeRolled.png').removeClass('die');
-    $('#playerTwoDie').attr('src', 'images/dice/BeforeRolled.png').removeClass('die');
+    $('#playerOneDie').attr('src', 'assets/images/dice/BeforeRolled.png').removeClass('die');
+    $('#playerTwoDie').attr('src', 'assets/images/dice/BeforeRolled.png').removeClass('die');
     $('.containerEndGame').hide();
     $('.containerInstructions').show();
 });
@@ -404,7 +398,7 @@ $(document).one('click', '#playerOneDie', function() {
     } else {
         playerOneDie = ranDieOne;
         diceAudio.play();
-        $('#playerOneDie').attr('src', 'images/dice/' + ranDieOne + '.png').addClass('die');
+        $('#playerOneDie').attr('src', 'assets/images/dice/' + ranDieOne + '.png').addClass('die');
         allPlayers.playerOne.firstroll = ranDieOne;
     }
 });
@@ -418,7 +412,7 @@ $(document).one('click', '#playerTwoDie', function() {
     } else {
         playerTwoDie = ranDieTwo;
         diceAudio.play();
-        $('#playerTwoDie').attr('src', 'images/dice/' + ranDieTwo + '.png').addClass('die');
+        $('#playerTwoDie').attr('src', 'assets/images/dice/' + ranDieTwo + '.png').addClass('die');
         allPlayers.playerTwo.firstroll = ranDieTwo;
     }
 });
@@ -466,8 +460,7 @@ $(document).on('click', '#submitPlayerInfo', function() {
 
 //Game Start - Player1 rolls dice
 $(document).on('click', '#playerOneGameDieImage', function() {
-    statistics.cash.playerOne.push(allPlayers.playerOne.cash);
-    console.log(statistics);
+
     if (playerOneClickFlag) return;
 
     allPlayers.playerTwo.turn = 'false';
@@ -478,7 +471,7 @@ $(document).on('click', '#playerOneGameDieImage', function() {
     ranDieOne = Math.ceil(Math.random() * 6);
 
     diceAudio.play();
-    $('#playerOneGameDieImage').attr('src', 'images/dice/' + ranDieOne + '.png').addClass('die');
+    $('#playerOneGameDieImage').attr('src', 'assets/images/dice/' + ranDieOne + '.png').addClass('die');
     // displayPlayerPiece('player1',boardPosition[playerOnePositionCounter],'hide');
     playerOnePositionCounter = playerOnePositionCounter + ranDieOne; //ranDieOne;
     allPlayers.playerOne.currentPosition = boardPosition[playerOnePositionCounter];
@@ -492,8 +485,7 @@ $(document).on('click', '#playerOneGameDieImage', function() {
 
 //Game Start - Player2 rolls dice
 $(document).on('click', '#playerTwoGameDieImage', function() {
-    statistics.cash.playerTwo.push(allPlayers.playerTwo.cash);
-    console.log(statistics);
+
     if (playerTwoClickFlag) return;
 
     allPlayers.playerTwo.turn = 'true';
@@ -502,7 +494,7 @@ $(document).on('click', '#playerTwoGameDieImage', function() {
     startMove = playerTwoPositionCounter;
     ranDieTwo = Math.ceil(Math.random() * 6);
     diceAudio.play();
-    $('#playerTwoGameDieImage').attr('src', 'images/dice/' + ranDieTwo + '.png').addClass('die');
+    $('#playerTwoGameDieImage').attr('src', 'assets/images/dice/' + ranDieTwo + '.png').addClass('die');
     // displayPlayerPiece('player2',boardPosition[playerTwoPositionCounter],'hide');
     playerTwoPositionCounter = playerTwoPositionCounter + ranDieTwo; //ranDieTwo;
     allPlayers.playerTwo.currentPosition = boardPosition[playerTwoPositionCounter];
@@ -587,8 +579,8 @@ function playerEvent(player, property) {
     } else {
         ownedProperty = "playerOneOwnedProperties";
     }
-    $('#playerOneGameDieImage').attr('src', 'images/dice/BeforeRolled.png').removeClass('die');
-    $('#playerTwoGameDieImage').attr('src', 'images/dice/BeforeRolled.png').removeClass('die');
+    $('#playerOneGameDieImage').attr('src', 'assets/images/dice/BeforeRolled.png').removeClass('die');
+    $('#playerTwoGameDieImage').attr('src', 'assets/images/dice/BeforeRolled.png').removeClass('die');
     $(dieElementID).hide();
     $(dieImageElementID).hide();
 
@@ -658,12 +650,12 @@ function playerEvent(player, property) {
     //if square is a corner or Chance square
     else {
 
-        //if square is One Way Street or Fog or Jail or Go
-        if (property == "oneWayStreet" || property == "fog" || property == "jail" || property == "go") {
-            if (property == "fog") {
-                fogAudio.play();
-            } else if (property == "oneWayStreet") {
-                honkAudio.play();
+        //if square is Off Track or Yoshi or Jail or Go
+        if (property == "offTrack" || property == "BS" || property == "jail" || property == "go") {
+            if (property == "BS") {
+                yoshiAudio.play();
+            } else if (property == "offTrack") {
+                marioAudio.play();
             } else if (property == "jail") {
                 jailAudio.play();
             } else if (property == "go") {
@@ -795,13 +787,13 @@ $(document).on('click', '.interactionContinueButton', function() {
     }
 
     //Corner Squares
-    if (currentProperty == "oneWayStreet" || currentProperty == "fog" || currentProperty == "jail" || currentProperty == "go") {
-        if (currentProperty == "fog") {
+    if (currentProperty == "offTrack" || currentProperty == "BS" || currentProperty == "jail" || currentProperty == "go") {
+        if (currentProperty == "BS") {
             allPlayers[player].missTurn = true;
         } else if (currentProperty == 'go') {
             allPlayers[player].cash = (allPlayers[player].cash) + 200;
             $('#' + player + 'GameCash').text(allPlayers[player].cash);
-        } else if (currentProperty == "oneWayStreet") {
+        } else if (currentProperty == "offTrack") {
             if (((allPlayers[player].cash) - 100) < 0) {
                 allPlayers[player].cash = 0;
                 // alert(player+' Losses');
@@ -953,20 +945,3 @@ $(document).on('click', '#closeModal', function() {
 //     }
 
 // })
-
-// A function for saving on going player information
-var saveInfo = function(GameInfo) {
-    return $.ajax({
-      url: "/api/gameInfo",
-      data: note,
-      method: "POST"
-    });
-  };
-
-
-
-  
-  var GameInfo = {
-    playerNames: [allPlayers.playerOne, allPlayers.playerOne]
-
-  };
