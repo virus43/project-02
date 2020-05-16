@@ -276,7 +276,7 @@ var allProperties = {
         pair: 'koholint',
         url: 'images/prop-imgs/koholint.jpg'
     },
-    hyryle: {
+    hyrule: {
         name: "Hyrule",
         price: 400,
         rent: 200,
