@@ -99,7 +99,7 @@ var allProperties = {
         price: 200,
         rent: 0,
         owner: '',
-        url: 'assets/images/prop-imgs/go.jpg'
+        url: 'images/prop-imgs/go.jpg'
     },
     palletTown: {
         name: "pallet town",
@@ -107,7 +107,7 @@ var allProperties = {
         rent: 30,
         owner: '',
         pair: 'viridianCity',
-        url: 'assets/images/prop-imgs/ptown.png'
+        url: 'images/prop-imgs/ptown.png'
     },
     viridianCity: {
         name: "viridian City",
@@ -115,7 +115,7 @@ var allProperties = {
         rent: 30,
         owner: '',
         pair: 'palletTown',
-        url: 'assets/images/prop-imgs/viridianCity.png'
+        url: 'images/prop-imgs/viridianCity.png'
     },
     rainbowRoad: {
         name: "rainbow Road",
@@ -123,7 +123,7 @@ var allProperties = {
         rent: 50,
         owner: '',
         pair: 'sherbertLand',
-        url: 'assets/images/prop-imgs/rainbow.png'
+        url: 'images/prop-imgs/rainbow.png'
     },
     sherbertLand: {
         name: "Sherbert Land",
@@ -131,7 +131,7 @@ var allProperties = {
         rent: 60,
         owner: '',
         pair: 'rainbowRoad',
-        url: 'assets/images/prop-imgs/sherbert.png'
+        url: 'images/prop-imgs/sherbert.png'
     },
     offTrack: {
         name: "Off Track!",
@@ -140,7 +140,7 @@ var allProperties = {
         price: -100,
         rent: 0,
         owner: '',
-        url: 'assets/images/prop-imgs/in-jail.jpg'
+        url: 'images/prop-imgs/in-jail.jpg'
     },
     kongoJungle: {
         name: "Kongo Jungle",
@@ -148,7 +148,7 @@ var allProperties = {
         rent: 70,
         owner: '',
         pair: 'gorillaGlacier',
-        url: 'assets/images/prop-imgs/kongo.jpeg'
+        url: 'images/prop-imgs/kongo.jpeg'
     },
     gorillaGlacier: {
         name: "Gorilla Glacier",
@@ -156,7 +156,7 @@ var allProperties = {
         rent: 80,
         owner: '',
         pair: 'kongoJungle',
-        url: 'assets/images/prop-imgs/glacier.jpeg'
+        url: 'images/prop-imgs/glacier.jpeg'
     },
     corneria: {
         name: "Corneria",
@@ -164,7 +164,7 @@ var allProperties = {
         rent: 90,
         owner: '',
         pair: 'temple',
-        url: 'assets/images/prop-imgs/corneria.jpeg'
+        url: 'images/prop-imgs/corneria.jpeg'
     },
     temple: {
         name: "Temple",
@@ -172,35 +172,35 @@ var allProperties = {
         rent: 100,
         owner: '',
         pair: 'corneria',
-        url: 'assets/images/prop-imgs/temple.jpg'
+        url: 'images/prop-imgs/temple.jpg'
     },
     chance1: {
         name: "Chance! Take a chance card and follow the instructions.",
         price: 0,
         rent: 0,
         owner: '',
-        url: 'assets/images/prop-imgs/chance.jpg'
+        url: 'images/prop-imgs/chance.jpg'
     },  
     chance2: {
         name: "Chance! Take a chance card and follow the instructions.",
         price: 0,
         rent: 0,
         owner: '',
-        url: 'assets/images/prop-imgs/chance.jpg'
+        url: 'images/prop-imgs/chance.jpg'
     },
     chance3: {
         name: "Chance! Take a chance card and follow the instructions.",
         price: 0,
         rent: 0,
         owner: '',
-        url: 'assets/images/prop-imgs/chance.jpg'
+        url: 'images/prop-imgs/chance.jpg'
     },
     chance4: {
         name: "Chance! Take a chance card and follow the instructions.",
         price: 0,
         rent: 0,
         owner: '',
-        url: 'assets/images/prop-imgs/chance.jpg'
+        url: 'images/prop-imgs/chance.jpg'
     },
     mushroom: {
         name: "Mushroom Kingdom",
@@ -208,7 +208,7 @@ var allProperties = {
         rent: 110,
         owner: '',
         pair: 'starRoad',
-        url: 'assets/images/prop-imgs/mushroom.jpeg'
+        url: 'images/prop-imgs/mushroom.jpeg'
     },
     starRoad: {
         name: "Star Road",
@@ -216,7 +216,7 @@ var allProperties = {
         rent: 120,
         owner: '',
         pair: 'mushroom',
-        url: 'assets/images/prop-imgs/star.jpeg'
+        url: 'images/prop-imgs/star.jpeg'
     },
     tourian: {
         name: "Tourian",
@@ -224,7 +224,7 @@ var allProperties = {
         rent: 130,
         owner: '',
         pair: 'brinstar',
-        url: 'assets/images/prop-imgs/tourian.jpeg'
+        url: 'images/prop-imgs/tourian.jpeg'
     },
     brinstar: {
         name: "Brinstar",
@@ -232,7 +232,7 @@ var allProperties = {
         rent: 140,
         owner: '',
         pair: 'tourian',
-        url: 'assets/images/prop-imgs/brinstar.jpeg'
+        url: 'images/prop-imgs/brinstar.jpeg'
     },
     BS: {
         name: "hit by a blue shell",
@@ -241,7 +241,7 @@ var allProperties = {
         price: 0,
         rent: 0,
         owner: '',
-        url: 'assets/images/prop-imgs/BS.jpg'
+        url: 'images/prop-imgs/BS.jpg'
     },
     jail: {
         name: "Busted!",
@@ -250,7 +250,7 @@ var allProperties = {
         price: -80,
         rent: 0,
         owner: '',
-        url: 'assets/images/prop-imgs/jenny.png'
+        url: 'images/prop-imgs/jenny.png'
     },
     mumbo: {
         name: "Mumbo's Mountain",
@@ -258,7 +258,7 @@ var allProperties = {
         rent: 150,
         owner: '',
         pair: '',
-        url: 'assets/images/prop-imgs/mumbo.jpeg'
+        url: 'images/prop-imgs/mumbo.jpeg'
     },
     clanker: {
         name: "Clanker's Cavern",
@@ -266,7 +266,7 @@ var allProperties = {
         rent: 160,
         owner: '',
         pair: 'mumbo',
-        url: 'assets/images/prop-imgs/clanker.jpeg'
+        url: 'images/prop-imgs/clanker.jpeg'
     },
     koholint: {
         name: "Koholint Island",
@@ -274,7 +274,7 @@ var allProperties = {
         rent: 180,
         owner: '',
         pair: 'koholint',
-        url: 'assets/images/prop-imgs/koholint.jpg'
+        url: 'images/prop-imgs/koholint.jpg'
     },
     hyryle: {
         name: "Hyrule",
@@ -282,7 +282,7 @@ var allProperties = {
         rent: 200,
         owner: '',
         pair: 'koholint',
-        url: 'assets/images/prop-imgs/hyrule.jpeg'
+        url: 'images/prop-imgs/hyrule.jpeg'
     }
 };
 // Object  for chance cards
@@ -360,8 +360,8 @@ $('#resetGame').on('click', function() {
     playerTwoPositionCounter = 0;
     $('#playerOneGameOwnedPropertiesDiv').empty();
     $('#playerTwoGameOwnedPropertiesDiv').empty();
-    $('#playerOneDie').attr('src', 'assets/images/dice/BeforeRolled.png').removeClass('die');
-    $('#playerTwoDie').attr('src', 'assets/images/dice/BeforeRolled.png').removeClass('die');
+    $('#playerOneDie').attr('src', 'images/dice/BeforeRolled.png').removeClass('die');
+    $('#playerTwoDie').attr('src', 'images/dice/BeforeRolled.png').removeClass('die');
     $('.containerEndGame').hide();
     $('.containerInstructions').show();
 });
@@ -398,7 +398,7 @@ $(document).one('click', '#playerOneDie', function() {
     } else {
         playerOneDie = ranDieOne;
         diceAudio.play();
-        $('#playerOneDie').attr('src', 'assets/images/dice/' + ranDieOne + '.png').addClass('die');
+        $('#playerOneDie').attr('src', 'images/dice/' + ranDieOne + '.png').addClass('die');
         allPlayers.playerOne.firstroll = ranDieOne;
     }
 });
@@ -412,7 +412,7 @@ $(document).one('click', '#playerTwoDie', function() {
     } else {
         playerTwoDie = ranDieTwo;
         diceAudio.play();
-        $('#playerTwoDie').attr('src', 'assets/images/dice/' + ranDieTwo + '.png').addClass('die');
+        $('#playerTwoDie').attr('src', 'images/dice/' + ranDieTwo + '.png').addClass('die');
         allPlayers.playerTwo.firstroll = ranDieTwo;
     }
 });
@@ -471,7 +471,7 @@ $(document).on('click', '#playerOneGameDieImage', function() {
     ranDieOne = Math.ceil(Math.random() * 6);
 
     diceAudio.play();
-    $('#playerOneGameDieImage').attr('src', 'assets/images/dice/' + ranDieOne + '.png').addClass('die');
+    $('#playerOneGameDieImage').attr('src', 'images/dice/' + ranDieOne + '.png').addClass('die');
     // displayPlayerPiece('player1',boardPosition[playerOnePositionCounter],'hide');
     playerOnePositionCounter = playerOnePositionCounter + ranDieOne; //ranDieOne;
     allPlayers.playerOne.currentPosition = boardPosition[playerOnePositionCounter];
@@ -494,7 +494,7 @@ $(document).on('click', '#playerTwoGameDieImage', function() {
     startMove = playerTwoPositionCounter;
     ranDieTwo = Math.ceil(Math.random() * 6);
     diceAudio.play();
-    $('#playerTwoGameDieImage').attr('src', 'assets/images/dice/' + ranDieTwo + '.png').addClass('die');
+    $('#playerTwoGameDieImage').attr('src', 'images/dice/' + ranDieTwo + '.png').addClass('die');
     // displayPlayerPiece('player2',boardPosition[playerTwoPositionCounter],'hide');
     playerTwoPositionCounter = playerTwoPositionCounter + ranDieTwo; //ranDieTwo;
     allPlayers.playerTwo.currentPosition = boardPosition[playerTwoPositionCounter];
@@ -579,8 +579,8 @@ function playerEvent(player, property) {
     } else {
         ownedProperty = "playerOneOwnedProperties";
     }
-    $('#playerOneGameDieImage').attr('src', 'assets/images/dice/BeforeRolled.png').removeClass('die');
-    $('#playerTwoGameDieImage').attr('src', 'assets/images/dice/BeforeRolled.png').removeClass('die');
+    $('#playerOneGameDieImage').attr('src', 'images/dice/BeforeRolled.png').removeClass('die');
+    $('#playerTwoGameDieImage').attr('src', 'images/dice/BeforeRolled.png').removeClass('die');
     $(dieElementID).hide();
     $(dieImageElementID).hide();
 
