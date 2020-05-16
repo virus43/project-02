@@ -345,7 +345,7 @@ height: 50px;
 .corners {
     width: 15%;
 }
-#jail, #fog, #oneWayStreet, #go {
+#jail, #BS, #offTrack, #go {
     height: 120px;
     width: 100%;
 }
@@ -388,17 +388,17 @@ height: 50px;
 .bottom-60 {
     bottom: 60%; 
 }
-#playerOne-fog, #playerOne-chance4, #playerOne-noeValley, #playerOne-missionDistrict, #playerOne-chinaTown, #playerOne-haightAshbury {
+#playerOne-BS, #playerOne-chance4, #playerOne-kongoJungle, #playerOne-gorillaGlacier, #playerOne-corneria, #playerOne-temple {
     left: 1%;
 }
-#playerTwo-fog, #playerTwo-chance4, #playerTwo-noeValley, #playerTwo-missionDistrict, #playerTwo-chinaTown, #playerTwo-haightAshbury {
+#playerTwo-BS, #playerTwo-chance4, #playerTwo-kongoJungle, #playerTwo-gorillaGlacier, #playerTwo-corneria, #playerTwo-temple {
     left: 8%;
 }
-#playerOne-oneWayStreet {
+#playerOne-offTrack {
     left: 1%;
     bottom: 3%;
 }
-#playerTwo-oneWayStreet {
+#playerTwo-offTrack {
     left: 8%;
     bottom: 3%;
 }
@@ -408,11 +408,11 @@ height: 50px;
 #playerTwo-jail, #playerTwo-go {
     right: 2%;
 }
-#playerOne-chance2, #playerOne-northBeach, #playerOne-soma, #playerOne-financialDistrict, #playerOne-russianHill {
+#playerOne-chance2, #playerOne-mumbo, #playerOne-clanker, #playerOne-hyrule, #playerOne-koholint {
     width: 35%;
     left: 11%;
 }
-#playerTwo-chance2, #playerTwo-northBeach, #playerTwo-soma, #playerTwo-financialDistrict, #playerTwo-russianHill {
+#playerTwo-chance2, #playerTwo-mumbo, #playerTwo-clanker, #playerTwo-hyrule, #playerTwo-koholint {
     width: 35%;
     right: 6%;
 }
@@ -422,28 +422,28 @@ height: 50px;
 #playerTwo-chance1, #playerTwo-chance3 {
     right: 44%;
 }
-#playerOne-goldenGatePark, #playerOne-dogPatch {
+#playerOne-palletTown, #playerOne-brinstar {
     right: 23%;
 }
-#playerTwo-goldenGatePark, #playerTwo-dogPatch {
+#playerTwo-palletTown, #playerTwo-brinstar {
     right: 16%;
 }
-#playerOne-huntersPoint, #playerOne-alamoSquare {
+#playerOne-viridianCity, #playerOne-tourian {
     right: 37%;
 }
-#playerTwo-huntersPoint, #playerTwo-alamoSquare {
+#playerTwo-viridianCity, #playerTwo-tourian {
     right: 30%;
 }
-#playerOne-sunset, #playerOne-civicCenter {
+#playerOne-rainbowRoad, #playerOne-starRoad {
     left: 30%;
 }
-#playerTwo-sunset, #playerTwo-civicCenter {
+#playerTwo-rainbowRoad, #playerTwo-starRoad {
     left: 37%;
 }
-#playerOne-nobHill, #playerOne-theCastro {
+#playerOne-sherbertLand, #playerOne-mushroom {
     left: 16%;
 }
-#playerTwo-nobHill, #playerTwo-theCastro {
+#playerTwo-sherbertLand, #playerTwo-mushroom {
     left: 23%;
 }
 
