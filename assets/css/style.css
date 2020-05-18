@@ -502,3 +502,9 @@ height: 50px;
 .a {
     color: white;
 }
+.cashBox {
+    padding: 30px 0;
+}
+.cashTitle {
+    margin-bottom: 10px;
+}

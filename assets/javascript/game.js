@@ -429,13 +429,18 @@ $(document).on('click', '#submitPlayerInfo', function() {
     } else if (allPlayers.playerOne.firstroll == undefined || allPlayers.playerTwo.firstroll == undefined) {
         errorAudio.play();
         alert('Please click the die to roll for each player.')
+    } else if ($('#startingCash').val() == '' || $('#startingCash').val() == undefined) {
+        errorAudio.play();
+        alert('Please enter the amount of starting cash.');
     } else {
         allPlayers.playerOne.name = $('#playerOneName').val();
         allPlayers.playerTwo.name = $('#playerTwoName').val();
         allPlayers.playerOne.currentPosition = "go";
         allPlayers.playerTwo.currentPosition = "go";
-        allPlayers.playerOne.cash = 1000;
-        allPlayers.playerTwo.cash = 1000;
+        allPlayers.playerOne.cash = $('#startingCash').val();
+        allPlayers.playerTwo.cash = $('#startingCash').val();;
+
+
         $('.containerPlayers').hide();
 
         $('#playerOneGameName').text(allPlayers.playerOne.name);
