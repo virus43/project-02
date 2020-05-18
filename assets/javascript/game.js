@@ -434,8 +434,9 @@ $(document).on('click', '#submitPlayerInfo', function() {
         allPlayers.playerTwo.name = $('#playerTwoName').val();
         allPlayers.playerOne.currentPosition = "go";
         allPlayers.playerTwo.currentPosition = "go";
-        allPlayers.playerOne.cash = 1000;
-        allPlayers.playerTwo.cash = 1000;
+        allPlayers.playerOne.cash = $('#startingCash').val();
+        allPlayers.playerTwo.cash = $('#startingCash').val();
+
         $('.containerPlayers').hide();
 
         $('#playerOneGameName').text(allPlayers.playerOne.name);
