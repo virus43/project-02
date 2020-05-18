@@ -50,6 +50,11 @@ h1.startScreen, h2.instructionsScreen, h2.playersScreen, h2.endGameScreen, h2.mo
     box-shadow: 5px 5px 8px black;
 }
 
+#quit {
+    margin:15px auto;
+    box-shadow: 5px 5px 8px black;
+}
+
 /* instructions container, text, button, etc. AKA screen 2, Instructions */
 .containerInstructions, .containerEndGame {
     background: darkred;
@@ -493,4 +498,7 @@ height: 50px;
     margin-left: 44%;
     margin-top: 5px;
     margin-bottom: 5px;
+}
+.a {
+    color: white;
 }

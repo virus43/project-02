@@ -4,6 +4,9 @@ allPlayers = {
     playerOne: {},
     playerTwo: {}
 };
+
+statistics = [];
+
 // var playerOne = {};
 // var playerTwo = {};
 var playerOneDie, playerTwoDie;
@@ -390,7 +393,7 @@ $(document).on('click', '#instructionsGoToGame', function() {
 });
 
 //Player One die roll on the Player Info screen
-$(document).one('click', '#playerOneDie', function() {
+$(document).on('click', '#playerOneDie', function() {
     diceAudio.pause();
     diceAudio.currentTime = 0;
     if (ranDieOne == ranDieTwo) {
@@ -404,7 +407,7 @@ $(document).one('click', '#playerOneDie', function() {
 });
 
 //Player Two die roll on the Player Info screen
-$(document).one('click', '#playerTwoDie', function() {
+$(document).on('click', '#playerTwoDie', function() {
     diceAudio.pause();
     diceAudio.currentTime = 0;
     if (ranDieTwo == ranDieOne) {
@@ -481,6 +484,8 @@ $(document).on('click', '#playerOneGameDieImage', function() {
     showInterval = setInterval(function() { displayPlayerPiece('playerOne', boardPosition[startMove + 1], 'show', playerOnePositionCounter); }, 1000);
 
     playerOneClickFlag = true;
+//////added code here - viraj    
+    allPlayers.playerOne.diceRoll = ranDieOne;
 })
 
 //Game Start - Player2 rolls dice
@@ -504,6 +509,11 @@ $(document).on('click', '#playerTwoGameDieImage', function() {
     showInterval = setInterval(function() { displayPlayerPiece('playerTwo', boardPosition[startMove + 1], 'show', playerTwoPositionCounter); }, 1000);
 
     playerTwoClickFlag = true;
+//////added code here - viraj
+    allPlayers.playerTwo.diceRoll = ranDieTwo;
+    // saveInfo(allPlayers).then(function(data) {
+
+    // });
 })
 
 
@@ -737,6 +747,10 @@ $(document).on('click', '.interactionYesButton', function() {
     } else {
         buyAudio.play();
 
+//////added code here - viraj
+        allPlayers[player].propertyInvestment =  allProperties[currentProperty].price;
+        allPlayers[player].propertyBought = allProperties[currentProperty].name;
+
         allProperties[currentProperty].owner = player;
         allPlayers[player].cash = (allPlayers[player].cash) - (allProperties[currentProperty].price);
         $('#' + player + 'GameCash').text(allPlayers[player].cash);
@@ -846,6 +860,8 @@ $(document).on('click', '.interactionContinueButton', function() {
     switchPlayer(player, 'false');
 })
 
+var round = 0;
+
 //switch turns, miss a turn
 function switchPlayer(player, value) {
     if (player == 'playerOne') {
@@ -870,7 +886,7 @@ function switchPlayer(player, value) {
 
     }
 
-
+    
     if (allPlayers.playerOne.turn == true) {
         $("#playerOneGameDie").show();
         $("#playerOneGameDieImage").show();
@@ -878,31 +894,82 @@ function switchPlayer(player, value) {
         $("#playerTwoGameDie").show();
         $("#playerTwoGameDieImage").show();
     }
+
+    round= round + 1;
+    console.log(round);
+    // statistics.push(allPlayers);
+    console.log(allPlayers);
+    console.log(statistics);
+    // statistics[player].cash.push(allPlayers[player].cash);
+    if (round%2 == 0) {
+        statistics.push(JSON.parse(JSON.stringify(allPlayers)));
+
+    }
+    
+        // console.log(statistics);
+        // saveInfo(statistics).then(function(data) {
+        // });
+        // console.log(allPlayers);
+        // saveInfo(allPlayers).then(function(data) {
+
+        // });
+    // }   
 }
 
-//Game over page displays
-function gameOver(player) {
-    if (player == "playerOne") {
-        otherPlayer = "playerTwo";
-        winner = (allPlayers[otherPlayer].name).toUpperCase();
-        loser = (allPlayers[player].name).toUpperCase();
-        $('#winnerImg').attr('src', $('#winnerImg').attr('data-playerOne'));
-    } else {
-        otherPlayer = "playerOne";
-        winner = (allPlayers[otherPlayer].name).toUpperCase();
-        $('#winnerImg').attr('src', $('#winnerImg').attr('data-playerTwo'));
-        loser = (allPlayers[player].name).toUpperCase();
-    }
-    playerOneEndPosition = '#playerOne-' + allPlayers.playerOne.currentPosition;
-    playerTwoEndPosition = '#playerTwo-' + allPlayers.playerTwo.currentPosition;
+// A function for saving on going player information
+var saveInfo = function(gameInfo) {
+    return new Promise((resolve,reject) => {
+        $.ajax({
+            url: "/api/gameInfo",
+            data: gameInfo,
+            method: "POST",
+            success: function(data) {
+                resolve(data)
+            },
+            error: function(error) {
+                reject(error)
+            }
+        });
+    });
+  };
 
-    $('#instructionsGoToGame').attr('data-gamestart', 'no');
-    $('.containerMainGame').hide();
-    $(playerOneEndPosition).hide();
-    $(playerTwoEndPosition).hide();
-    $('.winner').text(winner);
-    $('.loser').text(loser);
-    $('.containerEndGame').show();
+//Game over page displays
+var gameOver = function(player) {
+///// added code here - viraj
+    allPlayers[player].winner = 1;
+    saveInfo({...statistics}).then(data => {
+            console.log("done");
+            // setTimeout(() => {
+            window.location.replace( '/gameover' )
+        // },3000)
+
+    })
+    .catch(error => {
+        console.log(error);
+    });  
+    // }
+    // document.location='/gameOver';
+    // if (player == "playerOne") {
+    //     otherPlayer = "playerTwo";
+    //     winner = (allPlayers[otherPlayer].name).toUpperCase();
+    //     loser = (allPlayers[player].name).toUpperCase();
+    //     $('#winnerImg').attr('src', $('#winnerImg').attr('data-playerOne'));
+    // } else {
+    //     otherPlayer = "playerOne";
+    //     winner = (allPlayers[otherPlayer].name).toUpperCase();
+    //     $('#winnerImg').attr('src', $('#winnerImg').attr('data-playerTwo'));
+    //     loser = (allPlayers[player].name).toUpperCase();
+    // }
+    // playerOneEndPosition = '#playerOne-' + allPlayers.playerOne.currentPosition;
+    // playerTwoEndPosition = '#playerTwo-' + allPlayers.playerTwo.currentPosition;
+
+    // $('#instructionsGoToGame').attr('data-gamestart', 'no');
+    // $('.containerMainGame').hide();
+    // $(playerOneEndPosition).hide();
+    // $(playerTwoEndPosition).hide();
+    // $('.winner').text(winner);
+    // $('.loser').text(loser);
+    // $('.containerEndGame').show();
 }
 
 database.ref('highscores').limitToLast(1).on('child_added', function(snapshot) {
@@ -939,9 +1006,21 @@ $(document).on('click', '#closeModal', function() {
     $('#highScoresModal').hide();
 })
 
+$(document).on('click', '#quit', function() {
+    event.preventDefault();
+
+    gameOver('playerOne'); 
+    // setTimeout(function() {
+    //         window.location.replace( '/gameover' );
+    // }, 4000);
+})
+
+
+
 // $(document).click(function(event) {
 //     if(event.target == $('#highScoresModal')){
 //         $('#highScoresModal').hide();
 //     }
 
 // })
+
